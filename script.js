@@ -7,11 +7,12 @@ $('.check[name="'+ name +'"]').prop('required', false)
 $('.check[name="'+ name +'"]').prop('required', true)
 }
 $('.check[name="'+ name +'"]').not(this).prop('checked', false)
-}); 
-$("main").on('submit', function(e){
-alert('submited')
-e.preventDefault()
-return false
+});
+$('.choice').each(function(){
+    if($('#OVD').prop('checked')){
+        console.log($('#OVD').prop('checked'))
+        $('.text [type="text"]').prop("required", true);
+    }
 })
 });
 function previewImage() {
@@ -26,3 +27,25 @@ if (file.length) {
 fileReader.readAsDataURL(file[0])
 }
 };
+$('#crnt_add').on("change", function(){
+if($('#same').prop('checked')){
+$('#crnt_add input[type="text"]').prop("required", false);
+$('#crnt_add input[type="checkbox"]').prop("required",false);
+}
+})
+$('#submit').on("click", function(){
+let valid = true;
+$('[required]').each(function() {
+if ($(this).is(':invalid') || !$(this).val()){
+valid = false;
+}
+})
+if (valid){
+$('#form input[type="text"]').prop("disabled", true);
+$('#form input[type="checkbox"]').prop("disabled",true);
+}
+$("#form").submit(function(event){
+loadAjax();
+event.preventDefault()
+})
+})

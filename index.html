@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: auto;">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
 <div class="border border-dark bg-warning text-center">
 <h3 class="d-inline">CENTRAL CKYC REGISTRY | Know Your Customer (KYC) Application Form | Individual</h3>
 </div>
-<div class="border border-dark ps-2">
+<div class="border border-dark ps-3">
 <h4 class="d-inline">Important Instruction</h4>
 </div>
 <div class="border border-dark row mx-auto">
@@ -56,16 +56,16 @@
 <div class="border border-dark col-lg-3 d-flex align-items-center">
 <h4>Apllication Type*</h4>
 </div>
-<div class="border border-dark col-lg-1"><input type="checkbox" name="application" class="check form-check-input" required> New</div>
-<div class="border border-dark col-lg-2"><input type="checkbox" name="application" class="check form-check-input" required> Update</div>
+<div class="border border-dark col-lg-1"><input type="checkbox" id="ap_check" name="application" class="check form-check-input" value="off" required> New</div>
+<div class="border border-dark col-lg-2"><input type="checkbox" id="ap_check" name="application" class="check form-check-input" required> Update</div>
 <div class="border border-dark col-lg-4"><h5 class="d-inline">KYC Number</h5><p class="d-inline"> (Mandotary for KYC Update Request)</p></div>
 <div class="border border-dark col-lg-2"><input type="text" class="form-control border-0 h-100"></div>
 </div>
 <div class="row">
 <div class="border border-dark col-lg-3 d-flex align-items-center"><h4>Account Type*</h4></div>
-<div class="border border-dark col-lg-2"><input type="checkbox" name="account" class="check form-check-input" required> Normal</div>
-<div class="border border-dark col-lg-2"><input type="checkbox" name="account" class="check form-check-input" required> Minor</div>
-<div class="border border-dark col-lg-5"><input type="checkbox" name="account" class="check form-check-input" required> Aadhaar OTP-based e-KYC(in non face to face mode)</div>
+<div class="border border-dark col-lg-2"><input type="checkbox" id="ac_check" name="account" class="check form-check-input" required> Normal</div>
+<div class="border border-dark col-lg-2"><input type="checkbox" id="ac_check" name="account" class="check form-check-input" required> Minor</div>
+<div class="border border-dark col-lg-5"><input type="checkbox" id="ac_check" name="account" class="check form-check-input" required> Aadhaar OTP-based e-KYC(in non face to face mode)</div>
 </div>
 </div>
 </div>
@@ -85,37 +85,37 @@
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-3"><h4 class="d-inline">Name</h4><p class="d-inline">* (same as ID proof)</p></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0" required></div>
-<div class="border border-dark col-lg-3"><input type="text" class="form-control border-0" required></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0"></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0" required></div>
+<div class="border border-dark col-lg-2"><input type="text" id="prefix" class="form-control border-0" onchange="chng();" required></div>
+<div class="border border-dark col-lg-3"><input type="text" id="fname" class="form-control border-0" required></div>
+<div class="border border-dark col-lg-2"><input type="text" id="mname" class="form-control border-0"></div>
+<div class="border border-dark col-lg-2"><input type="text" id="lname" class="form-control border-0" required></div>
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-3"><h4>Maiden Name</h4></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0"></div>
-<div class="border border-dark col-lg-3"><input type="text" class="form-control border-0"></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0"></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0"></div>
+<div class="border border-dark col-lg-2"><input type="text" id="prefix" class="form-control border-0"></div>
+<div class="border border-dark col-lg-3"><input type="text" id="fname" class="form-control border-0"></div>
+<div class="border border-dark col-lg-2"><input type="text" id="mname" class="form-control border-0"></div>
+<div class="border border-dark col-lg-2"><input type="text" id="lname" class="form-control border-0"></div>
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-3"><h4>Father/Spouse Name</h4></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0"></div>
-<div class="border border-dark col-lg-3"><input type="text" class="form-control border-0"></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0"></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0"></div>
+<div class="border border-dark col-lg-2"><input type="text" id="prefix" class="form-control border-0"></div>
+<div class="border border-dark col-lg-3"><input type="text" id="fname" class="form-control border-0"></div>
+<div class="border border-dark col-lg-2"><input type="text" id="mname" class="form-control border-0"></div>
+<div class="border border-dark col-lg-2"><input type="text" id="lname" class="form-control border-0"></div>
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-3"><h4>Mother Name</h4></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0"></div>
-<div class="border border-dark col-lg-3"><input type="text" class="form-control border-0"></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0"></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control border-0"></div>
+<div class="border border-dark col-lg-2"><input type="text" id="prefix" class="form-control border-0"></div>
+<div class="border border-dark col-lg-3"><input type="text" id="fname" class="form-control border-0"></div>
+<div class="border border-dark col-lg-2"><input type="text" id="mname" class="form-control border-0"></div>
+<div class="border border-dark col-lg-2"><input type="text" id="lname" class="form-control border-0"></div>
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-3"><h4 class="d-inline">Date of Birth*</h4></div>
 <div class="border border-dark col-lg-2"><input type="date" class="form-control border-0" required></div>
 <div class="border border-dark col-lg-1"><h4 class="d-inline">PAN*</h4></div>
-<div class="border border-dark col-lg-3"><input type="text" class="form-control border-0" required></div>
+<div class="border border-dark col-lg-3"><input type="text" id="pan" class="form-control border-0" required></div>
 <div class="border border-dark col-lg-3"><h4 class="d-inline">Form 60 furnished</h4></div>
 </div>
 <div class="row mx-auto">
@@ -144,7 +144,7 @@
 </div>
 </div>
 <!-- proof of identity & address -->
-<div class="container-lg py-3">
+<div class="container-lg py-3" id="pia">
 <div class="border border-dark bg-warning ps-3">
 <h3 class="d-inline"> 2. PROOF OF IDENTITY AND ADDRESS*</h3>
 <span class="align-text-bottom"> (Please refer to Instruction B at the end)</span>
@@ -159,7 +159,7 @@
 </div>
 <div class="row">
 <div class="border border-dark col-lg-7 ps-4">
-<input type="checkbox" name="OVD" class="check form-check-input" required>
+<input type="checkbox" id="OVD" name="OVD" class="check form-check-input" required>
 <h5 class="d-inline">A. Passport Number</h5>
 </div>
 <div class="border border-dark col-lg-5">
@@ -168,7 +168,7 @@
 </div>
 <div class="row">
 <div class="border border-dark col-lg-7 ps-4">
-<input type="checkbox" name="OVD" class="check form-check-input" required>
+<input type="checkbox" id="OVD" name="OVD" class="check form-check-input" required>
 <h5 class="d-inline">B. Voter ID Card</h5>
 </div>
 <div class="border border-dark col-lg-5">
@@ -177,7 +177,7 @@
 </div>
 <div class="row">
 <div class="border border-dark col-lg-7 ps-4">
-<input type="checkbox" name="OVD" class="check form-check-input" required>
+<input type="checkbox" id="OVD" name="OVD" class="check form-check-input" required>
 <h5 class="d-inline">C. Driving Licence</h5>
 </div>
 <div class="border border-dark col-lg-5">
@@ -186,7 +186,7 @@
 </div>
 <div class="row">
 <div class="border border-dark col-lg-7 ps-4">
-<input type="checkbox" name="OVD" class="check form-check-input" required>
+<input type="checkbox" id="OVD" name="OVD" class="check form-check-input" required>
 <h5 class="d-inline">D. NREGA Job Card</h5>
 </div>
 <div class="border border-dark col-lg-5">
@@ -195,7 +195,7 @@
 </div>
 <div class="row">
 <div class="border border-dark col-lg-7 ps-4">
-<input type="checkbox" name="OVD" class="check form-check-input" required>
+<input type="checkbox" id="OVD" name="OVD" class="check form-check-input" required>
 <h5 class="d-inline">E. National Population Register Letter</h5>
 </div>
 <div class="border border-dark col-lg-5">
@@ -204,7 +204,7 @@
 </div>
 <div class="row">
 <div class="border border-dark col-lg-7 ps-4">
-<input type="checkbox" name="OVD" class="check form-check-input" required>
+<input type="checkbox" id="OVD" name="OVD" class="check form-check-input" required>
 <h5 class="d-inline">F. Proof of Possession on Aadhaar</h5>
 </div>
 <div class="border border-dark col-lg-5">
@@ -214,21 +214,21 @@
 <div class="row">
 <div class="border border-dark col-lg-7">
 <p class="d-inline">ll.</p>
-<input type="checkbox" class="form-check-input" required>
+<input type="checkbox" id="kyc" class="form-check-input" required>
 <h5 class="d-inline">E-KYC Authentication</h5>
 </div>
 <div class="border border-dark col-lg-5">
-<input type="text" class="form-control border-0" required>
+<input type="text" id="e-kyc" class="form-control border-0" required>
 </div>
 </div>
 <div class="row">
 <div class="border border-dark col-lg-7">
 <p class="d-inline">lll.</p>
-<input type="checkbox" class="form-check-input" required>
+<input type="checkbox" id="offline" class="form-check-input" required>
 <h5 class="d-inline">Offline Verification of Aadhaar</h5>
 </div>
 <div class="border border-dark col-lg-5">
-<input type="text" class="form-control border-0" required>
+<input type="text" id="verification" class="form-control border-0" required>
 </div>
 </div>
 </div>
@@ -242,7 +242,7 @@
 <div class="border border-dark d-flex align-items-center justify-content-center">
 <input type="file" id="file1" accept="image/*" class="form-control" onchange="previewImage();" required>
 <label for="file1" class="d-flex align-items-center justify-content-center" style="height: 302px;">
-<img id="display1" class="w-100 h-100">
+<img id="display1" class="w-100 h-100" style="cursor: pointer;">
 </label><br>
 </div>
 </div>
@@ -251,7 +251,7 @@
 <div class="border border-dark bg-warning ps-3"><h4 class="d-inline">ADDRESS</h4></div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-1 ps-3"><h6>Line 1*</h6></div>
-<div class="border border-dark col-lg-11"><input type="text" class="form-control form-control-sm border-0" required></div>
+<div class="border border-dark col-lg-11"><input type="text" id="add" class="form-control form-control-sm border-0" required></div>
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-1 ps-3"><h6>Line 2</h6></div>
@@ -263,28 +263,32 @@
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-2"><h6>City/Town/Village*</h6></div>
-<div class="border border-dark col-lg-5"><input type="text" class="form-control form-control-sm border-0" required></div>
+<div class="border border-dark col-lg-5"><input type="text" id="city" class="form-control form-control-sm border-0" required></div>
 <div class="border border-dark col-lg-1"><h6>District*</h6></div>
-<div class="border border-dark col-lg-4"><input type="text" class="form-control form-control-sm border-0" required></div>
+<div class="border border-dark col-lg-4"><input type="text" id="dist" class="form-control form-control-sm border-0" required></div>
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-2"><h6>Pin/Post Code*</h6></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control form-control-sm border-0" required></div>
+<div class="border border-dark col-lg-2"><input type="text" id="pin" class="form-control form-control-sm border-0" required></div>
 <div class="border border-dark col-lg-2"><h6>State/U.T. Code*</h6></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control form-control-sm border-0" required></div>
+<div class="border border-dark col-lg-2"><input type="text" id="state" class="form-control form-control-sm border-0" required></div>
 <div class="border border-dark col-lg-3"><h6>ISO 3166 Country Code</h6></div>
 <div class="border border-dark col-lg-1"><input type="text" class="form-control form-control-sm border-0"></div>
 </div>
 </div>
 <!-- current address details -->
-<div class="container-lg py-3">
+<div class="container-lg py-3" id="crnt_add">
 <div class="border border-dark bg-warning ps-3">
 <h3 class="d-inline"> 3. CURRENT ADDRESS DETAILS</h3>
 <span class="align-text-bottom"> (Please refer to Instruction B at the end)</span>
 </div>
-<div class="border border-dark d-flex">
-<p class="d-inline ps-1">l.</p>
-<p class="d-inline ps-4">Certified copy of OVD or equivalent e-document of OVD or OVD obtained through digital KYC process needs to be submitted (any one of the following OVDs)</p>
+<div class="border border-dark d-flex ps-3">
+<input type="checkbox" id="same" class="d-inline form-check-input">
+<span class="align-text-bottom ps-4">Same as above mentioned address (In such cases, address details as below need not be provided)</span>
+</div>
+<div class="border border-dark d-flex ps-3">
+<span class="align-text-bottom ps-1">l.</span>
+<span class="align-text-bottom ps-4">Certified copy of OVD or equivalent e-document of OVD or OVD obtained through digital KYC process needs to be submitted (any one of the following OVDs)</span>
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-7 ps-4">
@@ -374,7 +378,7 @@
 <div class="border border-dark bg-warning ps-3"><h4 class="d-inline">ADDRESS</h4></div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-1 ps-3"><h6>Line 1*</h6></div>
-<div class="border border-dark col-lg-11"><input type="text" class="form-control form-control-sm border-0" required></div>
+<div class="border border-dark col-lg-11"><input type="text" id="add" class="form-control form-control-sm border-0" required></div>
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-1 ps-3"><h6>Line 2</h6></div>
@@ -386,15 +390,15 @@
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-2"><h6>City/Town/Village*</h6></div>
-<div class="border border-dark col-lg-5"><input type="text" class="form-control form-control-sm border-0" required></div>
+<div class="border border-dark col-lg-5"><input type="text" id="city" class="form-control form-control-sm border-0" required></div>
 <div class="border border-dark col-lg-1"><h6>District*</h6></div>
-<div class="border border-dark col-lg-4"><input type="text" class="form-control form-control-sm border-0" required></div>
+<div class="border border-dark col-lg-4"><input type="text" id="dist" class="form-control form-control-sm border-0" required></div>
 </div>
 <div class="row mx-auto">
 <div class="border border-dark col-lg-2"><h6>Pin/Post Code*</h6></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control form-control-sm border-0" required></div>
+<div class="border border-dark col-lg-2"><input type="text" id="pin" class="form-control form-control-sm border-0" required></div>
 <div class="border border-dark col-lg-2"><h6>State/U.T. Code*</h6></div>
-<div class="border border-dark col-lg-2"><input type="text" class="form-control form-control-sm border-0" required></div>
+<div class="border border-dark col-lg-2"><input type="text" id="state" class="form-control form-control-sm border-0" required></div>
 <div class="border border-dark col-lg-3"><h6>ISO 3166 Country Code</h6></div>
 <div class="border border-dark col-lg-1"><input type="text" class="form-control form-control-sm border-0"></div>
 </div>
@@ -407,16 +411,16 @@
 <span class="align-text-bottom">  (All communications will be sent to Mobile number/Email ID provided) (Please refer to Instruction C at the end)</span>
 </div>
 <div class="row mx-auto">
-<div class="border border-dark col-lg-1"><h5>Tel. (Off)</h5></div>
-<div class="border border-dark col-lg-5"><input type="text" class="form-control form-control-sm border-0"></div>
-<div class="border border-dark col-lg-1"><h5>Tel. (Res)</h5></div>
-<div class="border border-dark col-lg-5"><input type="text" class="form-control form-control-sm border-0"></div>
+<div class="border border-dark col-lg-2"><h5>Tel. (Off)</h5></div>
+<div class="border border-dark col-lg-4"><input type="text" class="form-control form-control-sm border-0"></div>
+<div class="border border-dark col-lg-2"><h5>Tel. (Res)</h5></div>
+<div class="border border-dark col-lg-4"><input type="text" class="form-control form-control-sm border-0"></div>
 </div>
 <div class="row mx-auto">
-<div class="border border-dark col-lg-1"><h5>Mobile</h5></div>
-<div class="border border-dark col-lg-5"><input type="text" class="form-control form-control-sm border-0"></div>
-<div class="border border-dark col-lg-1"><h5>Email ID</h5></div>
-<div class="border border-dark col-lg-5"><input type="text" class="form-control form-control-sm border-0"></div>
+<div class="border border-dark col-lg-2"><h5>Mobile</h5></div>
+<div class="border border-dark col-lg-4"><input type="text" class="form-control form-control-sm border-0"></div>
+<div class="border border-dark col-lg-2"><h5>Email ID</h5></div>
+<div class="border border-dark col-lg-4"><input type="text" class="form-control form-control-sm border-0"></div>
 </div>
 </div>
 <!-- remark -->
@@ -457,11 +461,11 @@ number/email address.
 </div>
 </div>
 <div class="col-lg-3">
-<div class="row">
+<div class="row" style="height: calc(100% - 33px);">
 <div class="border border-dark d-flex align-items-center justify-content-center">
 <input type="file" id="file2" accept="image/*" class="form-control" onchange="previewImage();">
 <label for="file2" class="d-flex align-items-center justify-content-center" style="height: 152px;">
-<img id="display2" class="w-100 h-100">
+<img id="display2" class="w-100 h-100" style="cursor: pointer;">
 </label><br>
 </div>
 </div>
@@ -546,7 +550,7 @@ number/email address.
 <div class="border border-dark d-flex align-items-center justify-content-center">
 <input type="file" id="file3" accept="image/*" class="form-control" onchange="previewImage();">
 <label for="file3" class="d-flex align-items-center justify-content-center" style="height: 200px;">
-<img id="display3" class="w-100 h-100">
+<img id="display3" class="w-100 h-100" style="cursor: pointer;">
 </label><br>
 </div>
 </div>
@@ -574,7 +578,7 @@ number/email address.
 <div class="border border-dark d-flex align-items-center justify-content-center">
 <input type="file" id="file4" accept="image/*" class="form-control" onchange="previewImage();">
 <label for="file4" class="d-flex align-items-center justify-content-center" style="height: 299px;">
-<img id="display4" class="w-100 h-100">
+<img id="display4" class="w-100 h-100" style="cursor: pointer;">
 </label><br>
 </div>
 </div>
@@ -586,7 +590,7 @@ number/email address.
 </div>
 </main>
 <div class="d-flex justify-content-center">
-<button type="submit">Submit</button>
+<input type="submit" id="submit">
 </div>
 </form>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
