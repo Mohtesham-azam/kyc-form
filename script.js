@@ -8,13 +8,10 @@ this.value = this.value.toLocaleUpperCase();
 $(document).ready(function(){
 $('.check').click(function() {
 let name = $(this).attr("name")
-const textInput = $(this).closest('.row').find('input[type="text"]').first()
 if($(this).prop('checked')){
 $('.check[name="'+ name +'"]').prop('required', false);
-textInput.prop('required', false);
 } else {
 $('.check[name="'+ name +'"]').prop('required', true);
-textInput.prop('required', false);
 }
 $('.check[name="'+ name +'"]').not(this).prop('checked', false)
 });
@@ -23,7 +20,6 @@ $('.check[name="'+ name +'"]').not(this).prop('checked', false)
 $('#ofc_use').on("change", function(){
 if($('#update').prop('checked')){
 $('#ofc_use input[type="text"]').prop("required", true);
-$('#crnt_add input[type="checkbox"]').prop("required",false);
 }
 })
 // displaying the image
@@ -38,32 +34,82 @@ if (file.length) {
 fileReader.readAsDataURL(file[0])
 }
 };
+$('#pia').on("change", function(){
+if($('#pn').prop('checked')){
+$("#psprt").prop("required", true);
+} else{
+    $("#psprt").prop("required", false);
+}
+if($('#vc').prop('checked')){
+$("#vic").prop("required", true);
+} else{
+    $("#vic").prop("required", false);
+}
+if($('#dlc').prop('checked')){
+$("#dl").prop("required", true);
+} else{
+    $("#dl").prop("required", false);
+}
+if($('#njcc').prop('checked')){
+$("#njc").prop("required", true);
+} else{
+    $("#njc").prop("required", false);
+}
+if($('#nprc').prop('checked')){
+$("#npr").prop("required", true);
+} else{
+    $("#npr").prop("required", false);
+}
+if($('#ppa').prop('checked')){
+$("#adhr").prop("required", true);
+} else{
+    $("#adhr").prop("required", false);
+}
+if($('#eka').prop('checked')){
+$("#e-kyc").prop("required", true);
+} else{
+    $("#e-kyc").prop("required", false);
+}
+if($('#ova').prop('checked')){
+$("#verification").prop("required", true);
+} else{
+    $("#verification").prop("required", false);
+}
+})
 // auto fill on clicking checkbox
 function autoFill(){
 if(same.checked == true){
 if(pn.checked == true){
 pn1.checked = true;
+document.getElementById("pn1").disabled = true;
 }
 if(vc.checked == true){
 vc1.checked = true;
+document.getElementById("vc1").disabled = true;
 }
 if(dlc.checked == true){
-vc1.checked = true;
+dlc1.checked = true;
+document.getElementById("dlc1").disabled = true;
 }
 if(njcc.checked == true){
 njcc1.checked = true;
+document.getElementById("njcc1").disabled = true;
 }
 if(nprc.checked == true){
 nprc1.checked = true;
+document.getElementById("nprc1").disabled = true;
 }
 if(ppa.checked == true){
 ppa1.checked = true;
+document.getElementById("ppa1").disabled = true;
 }
 if(eka.checked == true){
 eka1.checked = true;
+document.getElementById("eka1").disabled = true;
 }
 if(ova.checked == true){
 ova1.checked = true;
+document.getElementById("ova1").disabled = true;
 }
 document.getElementById("psprt1").value = document.getElementById("psprt").value;
 document.getElementById("vic1").value = document.getElementById("vic").value;
@@ -101,7 +147,7 @@ document.getElementById("ciso1").readOnly = true;
 } else{
 pn1.checked = false;
 vc1.checked = false;
-vc1.checked = false;
+dlc1.checked = false;
 njcc1.checked = false;
 nprc1.checked = false;
 ppa1.checked = false;
