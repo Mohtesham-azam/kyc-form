@@ -130,7 +130,7 @@ const o_adhr = localStorage.getItem("ADHR");
 const o_e_kyc = localStorage.getItem("E-KYC");
 const o_verification = localStorage.getItem("VERIFICATION");
 
-document.getElementById('o-psprt').innerHTML = o_psprt[0];
+document.getElementById('o-psprt').innerHTML = o_psprt;
 document.getElementById('o-vic').innerHTML = o_vic;
 document.getElementById('o-dl').innerHTML = o_dl;
 document.getElementById('o-njc').innerHTML = o_njc;
