@@ -47,6 +47,7 @@ fileReader.readAsDataURL(file[0])
 // making text box required whose corresponding checkbox is checked & disabled other for section 2
 $('#pia').on("change", function(){
 $('.chk input[type="text"]').prop("disabled", true);
+$('.chk input[type="tel"]').prop("disabled", true);
 if($('#pn').prop('checked')){
 $("#psprt").prop("required", true);
 $("#psprt").prop("disabled", false);
