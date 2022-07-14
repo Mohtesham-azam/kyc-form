@@ -47,7 +47,6 @@ fileReader.readAsDataURL(file[0])
 // making text box required whose corresponding checkbox is checked & disabled other for section 2
 $('#pia').on("change", function(){
 $('.chk input[type="text"]').prop("disabled", true);
-$('.chk input[inputmode="numeric"]').prop("disabled", true);
 if($('#pn').prop('checked')){
 $("#psprt").prop("required", true);
 $("#psprt").prop("disabled", false);
@@ -99,7 +98,7 @@ $("#verification").prop("required", false);
 })
 // making text box required whose corresponding checkbox is checked & disabled other for section 3
 $('#crnt_add').on("change", function(){
-$('.chk input[type="text"]').prop("disabled", true);
+$('.chk1 input[type="text"]').prop("disabled", true);
 if($('#pn1').prop('checked')){
 $("#psprt1").prop("required", true);
 $("#psprt1").prop("disabled", false);
@@ -158,7 +157,7 @@ $("#dpa").prop("required", false);
 // auto fill on clicking checkbox
 function autoFill(){
 if(same.checked == true){
-$('.chk input[type="checkbox"]').prop("disabled", true);
+$('.chk1 input[type="checkbox"]').prop("disabled", true);
 if(pn.checked == true){
 pn1.checked = true;
 } else{
@@ -233,7 +232,7 @@ document.getElementById("cpin1").readOnly = true;
 document.getElementById("cstate1").readOnly = true;
 document.getElementById("ciso1").readOnly = true;
 } else{
-$('.chk input[type="checkbox"]').prop("disabled", false);
+$('.chk1 input[type="checkbox"]').prop("disabled", false);
 pn1.checked = false;
 vc1.checked = false;
 dlc1.checked = false;
